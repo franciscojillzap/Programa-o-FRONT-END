@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="style.css">
+    <title>Exercício II - Formulário</title>
+  </head>
+  <body>
+    <h1>Formulário de Registro</h1>
+
+    <form action="/register" method="POST">
+      <div class="form-group">
+        <label for="fullname">Nome:</label>
+        <input type="text" id="fullname" name="fullname" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" maxlength="8" required>
+      </div>
+
+      <div class="form-group">
+        <label for="date">Data de Nascimento:</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+
+      <div class="form-group">
+        <label for="sexo">Sexo:</label><br>
+        <input type="radio" id="masculino" name="sexo">Masculino
+        <input type="radio" id="feminino" name="sexo">Feminino
+        <input type="radio" id="outro" name="sexo">Outro
+      </div>
+
+      <div class="form-group">
+        <label for="interesses">Interesses:</label><br>
+        <input type="checkbox" id="tecnologia" name="interesses">Tecnologia
+        <input type="checkbox" id="yugioh" name="interesses">Yu-Gi-Oh!
+        <input type="checkbox" id="música" name="interesses">Música
+        <input type="checkbox" id="boxe" name="interesses">Boxe
+      </div>
+
+      <div class="form-group">
+        <label for="country">País:</label><br>
+        <select name="país" id="país" required multiple>
+          <option value="BR">Brasil</option>
+          <option value="EUA">Estados Unidos</option>
+          <option value="CA">Canadá</option>
+          <option value="JP">Japão</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="comments">Bibliografia:</label><br>
+        <textarea name=comentários id="comentários" cols="50" rows="10" required></textarea>
+      </div>
+
+      <input type="submit" name="Enviar" id="enviar">
+  </body>
+</html>
