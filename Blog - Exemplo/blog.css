@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    line-height: 1.5;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    font-size: 1.3rem;
+}
+
+header p {
+    font-size: 2rem;
+}
+
+footer p {
+    padding: 15px;
+    font-size: 1.5rem;
+}
+
+body {
+
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    text-align: center;
+    box-shadow: 5px 5px 15px 5px #000000;
+
+}
+
+h1 {
+    font-size: 5rem;
+    padding-top: 2%;
+    letter-spacing: 1rem;
+}
+
+h2 {
+    border-bottom: 1px dotted gray;
+    border-left: 10px solid gray;
+    padding-left: 10px;
+}
+
+main {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: flex-start; /* faz com que a section e aside ocupem apenas o seu próprio conteúdo */
+}
+
+section { flex: 3;}
+
+aside { flex: 1 ; }
+
+.card {
+    background-color: #E5E9F4;
+    border: 1px dotted gray;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px 3px #383737;
+}
+
+.card a { color: rgb(35, 35, 35); }
+
+.card a:hover { color: rgb(106, 105, 105);} 
+
+body {
+    background-image: linear-gradient(to left, rgb(73, 70, 70), rgb(164, 162, 162), rgb(73, 70, 70))
+}
+
+footer, header {
+    background-color: black;
+    color: #C7D0D7;
+    margin: 0;
+}
+header {
+    margin-bottom: 40px;
+    background-image: linear-gradient(to bottom, black, rgb(52, 51, 51));  
+}
+footer {
+    box-shadow: 3px -8px -8px 3px #383737;
+     margin-top: 40px;
+    background-image: linear-gradient(to bottom, black, rgb(52, 51, 51));  
+}
+
+a {
+    text-decoration: none;
+    color: #E5E9F4
+}
+
+a:hover {
+    color: #C7D0D7
+}
+
+.autor {
+    text-align: right;
+    color:rgb(111, 111, 111);
+    font-style: italic;
+}
+
+@media (max-width: 900px) {
+    * {
+        margin: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+    }
+
+    main {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }  
+}
