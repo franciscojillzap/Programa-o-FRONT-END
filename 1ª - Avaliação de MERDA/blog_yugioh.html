@@ -15,16 +15,16 @@
 
   <body>
     <!--Cabeçalho do blog-->
-    <header>
+    <header id="inicio">
       <h1>TAG FORCE MANIA</h1>
       <p>O site pra quem gosta de DUELAR!</p>
       <!--Menu de navegação do blog-->
       <nav>
         <ul>
-          <li>Ínicio</li>
-          <li>Última Postagem</li>
-          <li>Primeira Postagem</li>
-          <li>Contato</li>
+          <li><a href="#inicio">Ínicio</a></li>
+          <li><a href="#ultimo">Última Postagem</a></li>
+          <li><a href="#primeiro">Primeira Postagem</a></li>
+          <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
     </header>
@@ -34,33 +34,37 @@
       <!--Divide os conteúdos do blog em partes/seções-->
       <section>
         <!--Post do blog, conteúdo independente-->
-        <article class="">
+        <article id="ultimo" class="post">
           <h2>Como desbloquear todos os BOOSTER PACKS</h2>
           <p>Tome conhecimento de todas as dicas e truques que vão te ajudar a conseguir todos os Boosters do jogo e aprimorar o seu Deck!</p>
-          <p>Escrito por: Jillzap <span>23/03/2026 - 19:00</span></p>
+          <img class="img" src="imagens/booster_pack.jpeg" alt="Coleção de Booster Packs na loja da Academia">
+          <p class="autor">Escrito por: Jillzap <span>23/03/2026 - 19:00</span></p>
         </article>
 
-        <article class="">
-          <h2>Lista dos SANDUÍCHES preferidos de cada personagem</h2>
+        <article class="post">
+          <h2>Os SANDUÍCHES preferidos de cada personagem</h2>
           <p>Cansado de duelar? Saiba que essa não é a única maneira de maximizar a amizade! Ganhe o coração dos duelistas pela barriga!</p>
-          <p>Escrito por: Jillzap <span>22/03/2026 - 15:30</span></p>
+          <img class="img" src="imagens/sanduiche_iche.jpeg" alt="Tela com Sanduíche de Ovo Dourado">
+          <p class="autor">Escrito por: Jillzap <span>22/03/2026 - 15:30</span></p>
         </article>
 
-        <article class="">
+        <article class="post">
           <h2>Todas as RECEITAS de Deck e como conseguir</h2>
           <p>Cada duelista tem uma estratégia para alcançar a vitória, e as receitas são a melhor maneira de descobrir porquê eles são fortes!</p>
-          <p>Escrito por: Jillzap <span>21/03/2026 - 13:00</span></p>
+          <img class="img" src="imagens/receitas.jpeg" alt="Bastion com vários decks debaixo da manga">
+          <p class="autor">Escrito por: Jillzap <span>21/03/2026 - 13:00</span></p>
         </article>
-        
-        <article class="">
-          <h2>Guia Definitivo: como progredir no Yu-Gi-Oh! GX Tag Force</h2>
+
+        <article id="primeiro" class="post">
+          <h2>Guia Definitivo: como progredir no Tag Force I</h2>
           <p>Saiba tudo que é necessário para se tornar o melhor Duelista da Academia de Duelo com dicas que vão enriquecer sua gameplay!</p>
-          <p>Escrito por: Jillzap <span>20/03/2026 - 17:00</span></p>
+          <img class="img" src="imagens/passo_a_passo1.jpeg" alt="Jaden Yuki fazendo pose pra foto">
+          <p class="autor">Escrito por: Jillzap <span>20/03/2026 - 17:00</span></p>
         </article>
       </section>
 
       <!--Conteúdo complementar do blog, fica normalmente na parte lateral-->
-      <aside class="">
+      <aside class="post_extra">
         <h2>Links Úteis</h2>
         <ul>
           <li><a href="https://www.youtube.com/watch?v=M9XQ042ct00" target="_blank">Booster Pack</a></li>
@@ -71,17 +75,26 @@
           <li><a href="https://www.youtube.com/watch?v=1vnyaulvWzQ&list=PL-t1336xq7ymGKnXtdcTYne9sygDFcQFF" target="_blank">Acompanhe Yu-Gi-OH! GX</a></li>
         </ul>
       </aside>
-      <aside class="">
-        <h2>A carta do dia é...</h2>
+      <aside class="post_extra">
+        <h2 style="text-align: center;">A carta do dia é...</h2>
         <ul>
-          <!--carta do dia-->
+          <img class="card" src="imagens/traseira.png" alt="Parte de trás de um card de Yu-Gi-OH!">
         </ul>
       </aside>
     </main>
 
     <!--Rodapé do blog-->
-    <footer>
-      
+    <footer id="contato">
+      <p>&copy; 2026 Francisco Jillzap Productions. All rights reserved.</p>
+      <p>Contatos:</p>
+      <ul>
+        <li><a href="https://www.instagram.com/francisco_juseps/" target="_blank"><img class="contato" src="imagens/insta.png" alt="Logo do Instagram"></a></li>
+        <!--Um link que abre uma conversa com um número e lhe envia uma mensagem automática-->
+        <li><a href="https://wa.me/5586988217824?text=Como%20conseguiu%20fazer%20um%20site%20tão%20ruim?" target="_blank"><img class="contato" src="imagens/zapzap.png" alt="Logo do Whatsapp"></a></li>
+        <!--Um link que abre a tela de novo email destinado a um email específico, com uma mensagem padrão-->
+        <li><a href="https://mail.google.com/mail/?view=cm&to=franciscojusepi@gmail.com&body=Vi%20seu%20site!%20Achei%20péssimo!" target="_blank"><img class="contato" src="imagens/email.png" alt="Logo do E-mail"></a></li>
+      </ul>
+      <p><a href="#inicio">Volte ao topo</a></p>
     </footer>
   </body>
 </html>

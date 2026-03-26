@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+}
+
+.img {
+  /*Largura*/
+  width: 40%;
+  /*Altura*/
+  height: auto;
+}
+
+.autor {text-align: right; font-style: italic; color: darkslategray;}
+
+.contato {width: 3%; height: auto;}
+
+/*Ajuste de tamanho para a parte de trás do card*/
+.card {width: 12%; height: auto;}
+
+.post {
+  width: 40%;
+  margin: 20px;
+  padding: 30px;
+
+  background-color: #E5E9F4;
+  border: 1px dotted gray;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px 3px #383737;
+}
+
+.post img {
+  width: 100%;
+  height: auto;
+  /*Cria uma borda pontilhada (DOTTED) ao redor de um elemento*/
+  border: 1px dotted;
+}
+
+.post h2, p {
+  padding: 7px;
+}
+
+.post_extra {
+  width: 20%;
+  /*Controla o espaço EXTERNO (fora da borda) entre elementos*/
+  margin: 20px;
+  /*Controla o espaço INTERNO entre a borda e o conteúdo.*/
+  padding: 15px;
+
+  background-color: #E5E9F4;
+  border: 1px dotted gray;
+  /*Realiza o arredondamento das bordas de um elemento*/
+  border-radius: 10px;
+  /*Faz o sombreamento ao redor de um elemento*/
+  box-shadow: 3px 3px 10px 3px #383737;
+}
+
+.post_extra img {width: 85%; height: auto;}
+
+
+a:link, a:visited {text-decoration: none;}
+
+nav ul {
+  /*Remove os marcadores dos itens da lista (pontos, números, imagens, etc.)*/
+  list-style-image: url(imagens/estrela.png);
+  /*Torna o conteúdo da lista mais flexível, deixando os itens lado a lado em vez de organizados em colunas*/
+  display: flex;
+  /*Move os itens, deixando-os a esquerda (flex-start), direita (flex-end) ou centralizados (center)*/
+  justify-content: center;
+  /*Gera um espaçamento automático entre os itens, de outra forma, eles ficariam grudados um no outro (melhor alternativa que MARGIN)*/
+  gap: 60px;
+  padding: 15px;
+  font-size: 1.3rem;
+}
+
+body {
+  background-image: url(imagens/academia2.jpeg);
+  /*Torna a imagem de fundo fixa*/
+  background-attachment: fixed;
+  /*Redimensiona a imagem para cobrir toda a tela*/
+  background-size: cover;
+}
+
+header, footer {
+  text-align: center;
+  background-color: #E5E9F4;
+  border: 1px dotted gray;
+  box-shadow: 3px 3px 10px 3px #383737;
+}
+
+header {
+  padding-top: 150px;
+  padding-bottom: 5px;
+  margin-bottom: 50px;
+}
+
+footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 50px;
+}
+
+h2 {border-bottom: 1px dotted black;}
