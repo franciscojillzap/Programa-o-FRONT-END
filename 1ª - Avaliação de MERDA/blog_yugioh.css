@@ -9,6 +9,11 @@
   height: auto;
 }
 
+header img {
+  width: 15%;
+  height: auto;
+}
+
 .autor {text-align: right; font-style: italic; color: darkslategray;}
 
 .contato {width: 3%; height: auto;}
@@ -34,9 +39,9 @@
   border: 1px dotted;
 }
 
-.post h2, p {
-  padding: 7px;
-}
+.post h2, p {padding: 7px;}
+
+.post_extra h2, p {padding: 7px;}
 
 .post_extra {
   width: 20%;
@@ -55,7 +60,6 @@
 
 .post_extra img {width: 85%; height: auto;}
 
-
 a:link, a:visited {text-decoration: none;}
 
 nav ul {
@@ -66,7 +70,7 @@ nav ul {
   /*Move os itens, deixando-os a esquerda (flex-start), direita (flex-end) ou centralizados (center)*/
   justify-content: center;
   /*Gera um espaçamento automático entre os itens, de outra forma, eles ficariam grudados um no outro (melhor alternativa que MARGIN)*/
-  gap: 60px;
+  gap: 50px;
   padding: 15px;
   font-size: 1.3rem;
 }
@@ -87,15 +91,17 @@ header, footer {
 }
 
 header {
-  padding-top: 150px;
+  background-image: url(imagens/jaden_espelhado.png), url(imagens/jaden2.png);
+  background-position: left, right;
+  background-repeat: no-repeat;
+  background-size: 30%;
+  padding-top: 30px;
   padding-bottom: 5px;
   margin-bottom: 50px;
 }
 
 footer {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 5px;
   margin-top: 50px;
 }
-
-h2 {border-bottom: 1px dotted black;}
