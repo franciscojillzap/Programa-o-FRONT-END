@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercícios JavaScript</title>
+</head>
+<body>
+
+<h1 id="saida">Texto original</h1>
+<p id="p3"></p>
+
+<script>
+
+// 1) EXIBIR MENSAGENS
+
+// Exibe mensagem no console do navegador (F12 & Console)
+console.log("Bem-vindo ao JavaScript");
+
+// Exibe mensagem em um alerta (caixinha)
+alert("Bem-vindo ao JavaScript");
+
+// Escreve diretamente na página
+document.write("<h3>Bem-vindo ao JavaScript</h3>");
+
+// 2) VARIÁVEIS E TIPOS
+
+// Criando variáveis
+var nome = "Francisco";   // string (texto)
+var idade = 21;           // number (número)
+var saudavel = true;      // boolean (verdadeiro/falso)
+
+// Exibindo valores e tipos
+document.write("<br>Nome: " + nome + " - Tipo: " + typeof nome);
+document.write("<br>Idade: " + idade + " - Tipo: " + typeof idade);
+document.write("<br>Saudável: " + saudavel + " - Tipo: " + typeof saudavel);
+
+// 3) SOMA E CONCATENAÇÃO
+
+// Criando números
+var n1 = 10;
+var n2 = 20;
+
+// Soma
+var soma = n1 + n2;
+document.write("<br><br>Soma: " + soma);
+
+// Número como texto
+var n3 = "5";
+
+// Concatenação (junção de valores)
+var resultado = n1 + n3; // aqui vira texto
+document.write("<br>Concatenação: " + resultado);
+
+// 4) DUAS CASAS DECIMAIS
+
+// Número com várias casas
+var preco = 5.6789;
+
+// toFixed(2) limita para 2 casas decimais
+document.write("<br><br>Preço formatado: " + preco.toFixed(2));
+
+// 5) DOM - ALTERAR TEXTO
+
+// Pega o elemento pelo ID e altera o texto
+document.getElementById("saida").innerText = 
+"Texto alterado via JavaScript!";
+
+// 6) ALTERAR PARÁGRAFO E ESTILO
+
+// Pega o parágrafo pelo ID
+var p = document.getElementById("p3");
+
+// Altera o texto
+p.innerText = "Bem vindo ao JS";
+
+// Alterando estilos
+p.style.textAlign = "center";   // centraliza o texto
+p.style.fontStyle = "italic";   // deixa em itálico
+p.style.letterSpacing = "5px";  // espaçamento entre letras
+
+// 7) DATA NO FORMATO BR
+
+// Cria objeto com data atual
+var data = new Date();
+
+// Formata para padrão brasileiro
+var dataBR = data.toLocaleDateString("pt-BR");
+
+// Exibe na tela
+document.write("<br><br>Data atual: " + dataBR);
+
+</script>
+
+</body>
+</html>
