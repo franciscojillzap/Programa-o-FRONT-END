@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 - DOM no JS</title>
+</head>
+<body>
+    <h1>Programação Front-End</h1>
+
+    <div id="mensagem">Olá</div>
+
+    <label for="escola">Instituição de Ensino:</label>
+    <input type="text" id="escola">
+    <button id="botao_mensagem">Clique aqui</button>
+
+    <div id="resultado2"></div>
+
+    <label for="aluno">Nome do Aluno(a):</label>
+    <input type="text" id="aluno">
+    <button id="botao_nome">Enviar</button>
+    
+    <script>
+        let elemento = document.getElementById("mensagem");
+        document.write(elemento.innerText);
+
+        let inputNome = document.getElementById("nome");
+        document.write(inputNome.innerText);
+
+        ///////////////////////////////////////////////////////////////
+
+        function mostrar_mensagem() {
+            document.write("Você clicou no botão!<br>");
+        }
+
+        let botao_mensagem = document.getElementById("botao_mensagem");
+        botao_mensagem.addEventListener("click", mostrar_mensagem);
+
+        ///////////////////////////////////////////////////////////////
+
+        function exibir_nome(){
+            let nome = document.getElementById("nome2").value;
+            document.getElementById("resultado2").innerText = "Olá, " + nome + "!";
+        }
+
+        document.getElementById("botao_nome").addEventListener("click", exibir_nome);
+
+    </script>
+</body>
+</html>
