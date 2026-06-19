@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Múltiplo de 3</title>
+</head>
+<body>
+
+    <h1>Verificador de Múltiplo de 3</h1>
+
+    <label for="numero">Digite um número:</label>
+    <input type="number" id="numero">
+
+    <button onclick="verificarMultiplo()">Verificar</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function verificarMultiplo() {
+            // 1. Capturar o valor do input e converter para número inteiro
+            let numero = parseInt(document.getElementById("numero").value);
+            let divResultado = document.getElementById("resultado");
+
+            // Validação: verifica se o campo está vazio
+            if (isNaN(numero)) {
+                divResultado.innerHTML = "Por favor, digite um número válido.";
+                divResultado.style.color = "orange";
+                return;
+            }
+
+            // 2. Verificar se o resto da divisão por 3 é igual a 0
+            if (numero % 3 === 0) {
+                divResultado.innerHTML = `O número ${numero} é múltiplo de 3.`;
+                divResultado.style.color = "green";
+            } else {
+                divResultado.innerHTML = `O número ${numero} não é múltiplo de 3.`;
+                divResultado.style.color = "red";
+            }
+        }
+    </script>
+
+</body>
+</html>

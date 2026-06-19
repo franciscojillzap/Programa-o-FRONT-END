@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra o Menor Número</title>
+</head>
+<body>
+
+    <h1>Descubra o Menor Número</h1>
+
+    <!-- Campos para receber os dois números -->
+    <label for="num1">Primeiro número:</label>
+    <input type="number" id="num1" step="any">
+
+    <label for="num2">Segundo número:</label>
+    <input type="number" id="num2" step="any">
+
+    <button onclick="descobrirMenor()">Verificar Menor</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function descobrirMenor() {
+            // 1. Capturar os valores dos inputs e converter para número decimal (parseFloat)
+            let n1 = parseFloat(document.getElementById("num1").value);
+            let n2 = parseFloat(document.getElementById("num2").value);
+            let divResultado = document.getElementById("resultado");
+
+            // Validação: verifica se algum dos campos está vazio
+            if (isNaN(n1) || isNaN(n2)) {
+                divResultado.innerHTML = "Por favor, preencha os dois campos com números válidos.";
+                divResultado.style.color = "orange";
+                return;
+            }
+
+            // 2. Comparar os números e exibir o menor
+            if (n1 < n2) {
+                divResultado.innerHTML = `O menor número é: ${n1}`;
+                divResultado.style.color = "blue";
+            } else if (n2 < n1) {
+                divResultado.innerHTML = `O menor número é: ${n2}`;
+                divResultado.style.color = "blue";
+            } else {
+                divResultado.innerHTML = "Os dois números são iguais!";
+                divResultado.style.color = "purple";
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Quadrados</title>
+</head>
+<body>
+
+    <h1>Quadrado de Cinco Números</h1>
+    <p>Digite 5 números separados por vírgula:</p>
+
+    <input type="text" id="numerosInput" placeholder="Ex: 2, 5, 8, 10, 12">
+
+    <button onclick="calcularQuadrados()">Calcular Quadrados</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function calcularQuadrados() {
+            let input = document.getElementById('numerosInput').value;
+            let elementoResultado = document.getElementById('resultado');
+            
+            // Limpa o resultado anterior
+            elementoResultado.innerHTML = "";
+
+            // Separa o texto pelas vírgulas e remove espaços extras
+            let partes = input.split(',');
+
+            // Validação para garantir que o usuário digitou exatamente 5 itens
+            if (partes.length !== 5) {
+                elementoResultado.style.color = "red";
+                elementoResultado.innerHTML = "Por favor, digite exatamente 5 números separados por vírgula.";
+                return;
+            }
+
+            elementoResultado.style.color = "black";
+            let htmlConteudo = "";
+
+            // Processa cada número digitado
+            partes.forEach(function(item) {
+                let numero = parseFloat(item.trim());
+
+                // Verifica se o item convertido é de fato um número válido
+                if (isNaN(numero)) {
+                    htmlConteudo = "<span style='color:red;'>Erro: Um dos valores digitados não é um número válido.</span>";
+                    return;
+                }
+
+                // Calcula o quadrado (número multiplicado por ele mesmo)
+                let quadrado = numero * numero;
+                
+                // Monta a linha de resultado
+                htmlConteudo += `O quadrado de <strong>${numero}</strong> é <strong>${quadrado}</strong>.<br>`;
+            });
+
+            // Imprime todos os resultados na tela
+            elementoResultado.innerHTML = htmlConteudo;
+        }
+    </script>
+
+</body>
+</html>

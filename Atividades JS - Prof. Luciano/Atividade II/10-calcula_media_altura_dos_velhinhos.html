@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média de Alturas por Idade</title>
+</head>
+<body>
+    <h1>Análise de Altura (Mais de 50 anos)</h1>
+    <p>Insira a idade e a altura. Para finalizar e ver a média, digite uma <strong>idade menor ou igual a 0</strong>.</p>
+
+    <label for="idade">Idade:</label>
+    <input type="number" id="idade" placeholder="Ex: 55">
+    
+    <label for="altura">Altura (metros):</label>
+    <input type="number" id="altura" step="0.01" placeholder="Ex: 1.70">
+    
+    <button onclick="adicionarDados()">Registrar Pessoa</button>
+
+    <div id="contadorStatus">Pessoas registradas no total: 0</div>
+    <div id="resultado"></div>
+
+<script>
+    // Variáveis globais para acumular os valores necessários para a média
+    let somaAlturasMaiores50 = 0;
+    let qtdPessoasMaiores50 = 0;
+    let totalPessoasRegistradas = 0;
+
+    function adicionarDados() {
+        let inputIdade = document.getElementById('idade');
+        let inputAltura = document.getElementById('altura');
+        let elementoResultado = document.getElementById('resultado');
+
+        // Oculta e limpa mensagens de resultados anteriores a cada clique
+        elementoResultado.style.display = "none";
+        elementoResultado.className = "";
+
+        let idade = parseInt(inputIdade.value);
+        let altura = parseFloat(inputAltura.value);
+
+        // Validação de campo vazio
+        if (isNaN(idade)) {
+            exibirMensagem("Por favor, insira uma idade válida.", "erro");
+            return;
+        }
+
+        // Condição de encerramento do programa (Idade <= 0)
+        if (idade <= 0) {
+            finalizarPrograma();
+            return;
+        }
+
+        // Validação da altura caso a idade seja válida e maior que zero
+        if (isNaN(altura) || altura <= 0) {
+            exibirMensagem("Por favor, insira uma altura válida maior que zero.", "erro");
+            return;
+        }
+
+        // Contabiliza o registro geral
+        totalPessoasRegistradas++;
+        document.getElementById('contadorStatus').innerText = `Pessoas registradas no total: ${totalPessoasRegistradas}`;
+
+        // Verifica o critério do exercício: pessoas com mais de 50 anos
+        if (idade > 50) {
+            somaAlturasMaiores50 += altura;
+            qtdPessoasMaiores50++;
+        }
+
+        // Limpa os campos para a próxima inserção e foca no campo de idade
+        inputIdade.value = "";
+        inputAltura.value = "";
+        inputIdade.focus();
+    }
+
+    function finalizarPrograma() {
+        let elementoResultado = document.getElementById('resultado');
+        
+        // Esconde o formulário para indicar que a entrada de dados acabou
+        document.getElementById('formulario').style.display = 'none';
+        document.getElementById('contadorStatus').innerText = "Entrada de dados encerrada.";
+
+        // Verifica se alguma pessoa com mais de 50 anos foi registrada
+        if (qtdPessoasMaiores50 > 0) {
+            let media = (somaAlturasMaiores50 / qtdPessoasMaiores50).toFixed(2);
+            exibirMensagem(`<strong>Processamento concluído!</strong><br>A média das alturas das pessoas com mais de 50 anos é: <strong>${media} m</strong> (Baseado em ${qtdPessoasMaiores50} pessoa(s) nessa faixa).`, "info");
+        } else {
+            exibirMensagem("<strong>Processamento concluído!</strong><br>Nenhuma pessoa com mais de 50 anos foi cadastrada para calcular a média.", "info");
+        }
+    }
+
+    function exibirMensagem(texto, tipo) {
+        let elementoResultado = document.getElementById('resultado');
+        elementoResultado.innerHTML = texto;
+        elementoResultado.className = tipo;
+        elementoResultado.style.display = "block";
+    }
+</script>
+
+</body>
+</html>

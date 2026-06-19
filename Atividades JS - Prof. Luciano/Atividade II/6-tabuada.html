@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada Automática</title>
+</head>
+<body>
+
+    <h1>Gerador de Tabuada</h1>
+
+    <label for="numero">Digite um número:</label>
+    <input type="number" id="numero" placeholder="Ex: 7">
+
+    <button onclick="gerarTabuada()">Gerar Tabuada</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function gerarTabuada() {
+            // Captura o número digitado pelo usuário
+            let num = parseInt(document.getElementById('numero').value);
+            let elementoResultado = document.getElementById('resultado');
+
+            // Validação de campo vazio ou inválido
+            if (isNaN(num)) {
+                elementoResultado.style.color = "red";
+                elementoResultado.innerHTML = "Por favor, insira um número válido.";
+                return;
+            }
+
+            // Limpa o resultado anterior e define a cor padrão
+            elementoResultado.style.color = "black";
+            elementoResultado.innerHTML = ""; 
+
+            // Laço de repetição para calcular do 1 ao 10
+            for (let i = 1; i <= 10; i++) {
+                let multiplicacao = num * i;
+                
+                // Adiciona cada linha da tabuada no HTML usando quebra de linha (<br>)
+                elementoResultado.innerHTML += `${num} x ${i} = ${multiplicacao}<br>`;
+            }
+        }
+    </script>
+
+</body>
+</html>

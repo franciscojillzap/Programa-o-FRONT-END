@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Média Escolar</title>
+</head>
+<body>
+
+    <h1>Verificador de Média do Aluno</h1>
+
+    <!-- A tag script insere o JavaScript diretamente no documento HTML -->
+    <script>
+        // 1. Receber as quatro notas do usuário
+        let nota1 = parseFloat(prompt("Digite a primeira nota:"));
+        let nota2 = parseFloat(prompt("Digite a segunda nota:"));
+        let nota3 = parseFloat(prompt("Digite a terceira nota:"));
+        let nota4 = parseFloat(prompt("Digite a quarta nota:"));
+
+        // 2. Calcular a média aritmética
+        let media = (nota1 + nota2 + nota3 + nota4) / 4;
+
+        // 3. Verificar se o aluno foi aprovado ou reprovado
+        if (media >= 7) {
+            alert("Sua média foi " + media.toFixed(2) + ". Você está Aprovado!");
+        } else {
+            alert("Sua média foi " + media.toFixed(2) + ". Você está Reprovado.");
+        }
+    </script>
+
+</body>
+</html>

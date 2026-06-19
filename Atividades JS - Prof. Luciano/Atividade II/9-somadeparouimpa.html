@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma de Pares e Ímpares</title>
+</head>
+<body>
+    <h1>Soma de Pares e Ímpares</h1>
+    <p>Digite exatamente 10 números inteiros separados por vírgula:</p>
+
+    <input type="text" id="numerosInput" placeholder="Ex: 2, 5, 8, 11, 14, 17, 20, 23, 26, 29">
+
+    <button onclick="calcularParesImpares()">Calcular Somas</button>
+
+    <div id="resultado"></div>
+
+<script>
+    function calcularParesImpares() {
+        let input = document.getElementById('numerosInput').value;
+        let elementoResultado = document.getElementById('resultado');
+        
+        // Limpa o resultado anterior
+        elementoResultado.innerHTML = "";
+
+        // Separa o texto pelas vírgulas
+        let partes = input.split(',');
+
+        // Validação para garantir que o usuário digitou exatamente 10 itens
+        if (partes.length !== 10) {
+            elementoResultado.className = "erro";
+            elementoResultado.innerHTML = "Por favor, digite exatamente 10 números separados por vírgula.";
+            return;
+        }
+
+        let somaPares = 0;
+        let somaImpares = 0;
+        let erroIdentificado = false;
+
+        // Processa cada um dos 10 itens
+        for (let i = 0; i < partes.length; i++) {
+            // Trim remove espaços em branco antes e depois do caractere e parseInt converte para inteiro
+            let numero = parseInt(partes[i].trim());
+
+            // Verifica se o item de fato é um número inteiro válido
+            if (isNaN(numero)) {
+                erroIdentificado = true;
+                break;
+            }
+
+            // Regra matemática: se o resto da divisão por 2 for zero, o número é par
+            if (numero % 2 === 0) {
+                somaPares += numero;
+            } else {
+                somaImpares += numero;
+            }
+        }
+
+        // Se houver algum caractere inválido digitado, exibe erro
+        if (erroIdentificado) {
+            elementoResultado.className = "erro";
+            elementoResultado.innerHTML = "Erro: Um ou mais valores inseridos não são números inteiros válidos.";
+            return;
+        }
+
+        // Se passar por todas as validações, exibe os totais acumulados
+        elementoResultado.className = "sucesso";
+        elementoResultado.innerHTML = `
+            <strong>Resultado do cálculo:</strong><br>
+            • Soma dos números pares: <strong>${somaPares}</strong><br>
+            • Soma dos números ímpares: <strong>${somaImpares}</strong>
+        `;
+    }
+</script>
+
+</body>
+</html>

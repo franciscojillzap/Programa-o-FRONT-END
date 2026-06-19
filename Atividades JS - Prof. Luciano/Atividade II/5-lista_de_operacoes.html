@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Operações Expandida</title>
+</head>
+<body>
+
+    <h1>Calculadora de Operações</h1>
+
+    <label for="num1">Primeiro número:</label>
+    <input type="number" id="num1" step="any">
+
+    <label for="num2">Segundo número:</label>
+    <input type="number" id="num2" step="any">
+
+    <label for="operacao">Escolha a operação:</label>
+        <select id="operacao">
+            <option value="1">1 - Média entre os números</option>
+            <option value="2">2 - Diferença do maior para o menor</option>
+            <option value="3">3 - Produto dos números digitados</option>
+            <option value="4">4 - Divisão do primeiro pelo segundo</option>
+        </select>
+    </div>
+
+    <button onclick="calcular()">Executar Operação</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function calcular() {
+            // Captura os dados da tela
+            let n1 = parseFloat(document.getElementById('num1').value);
+            let n2 = parseFloat(document.getElementById('num2').value);
+            let opcao = document.getElementById('operacao').value;
+            
+            let elementoResultado = document.getElementById('resultado');
+
+            // Validação de campos vazios
+            if (isNaN(n1) || isNaN(n2)) {
+                elementoResultado.style.color = "red";
+                elementoResultado.innerText = "Por favor, insira valores numéricos válidos nos dois campos.";
+                return;
+            }
+
+            // Reseta a cor padrão do texto
+            elementoResultado.style.color = "black";
+
+            // Executa a lógica da opção selecionada
+            if (opcao === "1") {
+                let media = (n1 + n2) / 2;
+                elementoResultado.innerText = "A média entre os números é: " + media;
+            } 
+            else if (opcao === "2") {
+                let maior = Math.max(n1, n2);
+                let menor = Math.min(n1, n2);
+                let diferenca = maior - menor;
+                elementoResultado.innerText = "A diferença do maior para o menor é: " + diferenca;
+            } 
+            else if (opcao === "3") {
+                let produto = n1 * n2;
+                elementoResultado.innerText = "O produto dos números digitados é: " + produto;
+            } 
+            else if (opcao === "4") {
+                // Validação para evitar a divisão por zero
+                if (n2 === 0) {
+                    elementoResultado.style.color = "red";
+                    elementoResultado.innerText = "Erro: Não é possível dividir por zero.";
+                } else {
+                    let divisao = n1 / n2;
+                    elementoResultado.innerText = "A divisão do primeiro pelo segundo é: " + divisao;
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
